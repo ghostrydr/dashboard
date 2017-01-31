@@ -311,6 +311,7 @@ $(document).ready(function(){
 	function initTaskFilter (container) {
 		var tasks = initTaskFilterTasks(container);
 		var input = initTaskFilterInput(container, tasks);
+		var presets = initPresetTaskFilter(container, tasks);
 	}
 
 	function initTaskFilterTasks (container) {
@@ -325,6 +326,14 @@ $(document).ready(function(){
 		});
 		return input;
 	}
+
+    function initPresetTaskFilter (container, tasks) {
+		var input = container.find('[data-filter]');
+		input.on('click', function () {
+            filterTasks(tasks, $(this).data('filter'));
+		});
+		return input;        
+    }
 
 	function filterTasks (tasks, query) {
 		query = $.trim(query.replace(/[^a-z0-9\s]+/gi, ''));

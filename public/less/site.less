@@ -154,9 +154,11 @@
 .stat-type {
 	font-size:floor(@font-size-base * 0.75); // ~11px;
 	text-transform: uppercase;
-	display:block;
-	line-height:1.4;
+	display: inline-block;
+	margin-left: 0.5em;
+	line-height: 2;
 	.opacity(.8);
+	vertical-align: middle;
 }
 
 .aside .task-stats {
@@ -194,7 +196,6 @@
 	}
 	.task-card-link {
 		color:@gray-dark;
-		min-height:190px;
 		display:block;
 		transition: background 0.5s;
 		-webkit-transition: background 0.5s;
@@ -572,4 +573,11 @@ ul.date-links {
 }
 .inline-list + div.date {
 	display: inline-block;
+}
+
+
+.shaw-font {
+	font-family: shaw;
+	font-weight: 700;
+    margin-right: 4px;
 }
